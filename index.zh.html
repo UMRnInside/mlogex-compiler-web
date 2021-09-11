@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <title>Mlog Extended Web Compiler</title>
+        <style>
+
+body{
+    overflow-x: hidden;
+}
+header, footer{
+    text-align: center;
+}
+div.content{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+div.content>.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+div.content>textarea{
+    font-family: "Source Code Pro", "Noto Mono", monospace;
+    font-size: 12px;
+    height: 20em;
+    width: 36%;
+    margin: 2%;
+}
+.message {
+    font-family: "Source Code Pro", "Noto Mono", monospace;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2 id="h2-head">Extended Mindustry Logic Compiler</h2>
+            <p class="message" id="message1">Loading pyodide...</p>
+        </header>
+        <div class="content">
+            <textarea id="source-code-area" placeholder="Source Code Here" spellcheck="false"></textarea>
+            <div class="buttons">
+
+                <button id='compile-btn' onclick='compile()' >Compile &gt;&gt;</button>
+                <p></p>
+                <!-- 
+                <button id='copy-code'>Copy &lt;&lt;</button>
+                -->
+
+            </div>
+            <textarea id="destination-code-area" placeholder="Vanilla Mindustry Logic Here" spellcheck="false"></textarea>
+        </div>
+        <footer>
+            <p>项目仓库：</p>
+            <a href="https://github.com/UMRnInside/mlogex-compiler-web">UMRnInside/mlogex-compiler-web</a>
+            <a href="https://github.com/UMRnInside/MlogExtended">UMRnInside/MlogExtended</a>
+            <p>卡在 "Loading pyodide" 了吗？尝试打开 <u>about:memory</u> 并点击 GC 按钮。</p>
+            <p>这个页面理论上可以打包成纯静态的。</p>
+            <p>界面简陋？开发者不会写前端，先凑合着用吧……</p>
+        </footer>
+    </body>
+</html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.18.0/full/pyodide.js"></script>
+<script type="text/javascript" src="./js/install_pip_module.js"></script>
+<script type="text/javascript" src="./js/compiler.js"></script>
