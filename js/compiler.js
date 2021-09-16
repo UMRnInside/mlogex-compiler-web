@@ -6,7 +6,6 @@ function compile() {
     srcArea = document.getElementById("source-code-area")
     dstArea = document.getElementById("destination-code-area")
     msgArea = document.getElementById("message1")
-    console.log(pyodide.runPython)
     pyodide.runPython(`
 import js
 from mlog_extended import ExtendedCompiler, CompilationError
