@@ -15,7 +15,7 @@ async def install_mlog_extended() -> None:
     await micropip.install(js.MLOG_EXTENDED_INSTALLTION)
     compiler_version = version("mlog_extended")
     titleElement.innerText += ", v" + compiler_version
-    messageElement.innerText = "Loading complete!"
+    messageElement.innerText = "Complete!"
 
 install_mlog_extended()
 `)
