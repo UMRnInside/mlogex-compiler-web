@@ -8,8 +8,8 @@ function compile() {
     msgArea = document.getElementById("message1")
     pyodide.runPython(`
 import js
-from mlog_extended import ExtendedCompiler, CompilationError
-compiler = ExtendedCompiler()
+from mlog_extended import ProceduralCompiler, CompilationError
+compiler = ProceduralCompiler()
 
 try:
     js.msgArea.innerText = "Compiling..."
