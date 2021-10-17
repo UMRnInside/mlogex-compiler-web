@@ -5,7 +5,7 @@ PYODIDE_FULL="https://cdn.jsdelivr.net/pyodide/v0.18.0/full/"
 
 MLOG_EXTENDED_WHEEL_URL=$(wget -qO - "https://pypi.org/project/mlog-extended/#files" | grep mlog_extended | grep files.pythonhosted.org | grep whl | awk -F'"' '{print $2}')
 MLOG_EXTENDED_LOADER="mlog_extended"
-MLOG_EXTENDED_WHEEL_OUTPUT="./dist/mlog_extended-0.0.3-py3-none-any.whl"
+MLOG_EXTENDED_WHEEL_OUTPUT="./dist/mlog_extended-0.1.3-py3-none-any.whl"
 
 features="$@"
 echo "Features: ""$features"
@@ -14,7 +14,7 @@ mkdir -p dist/
 cp -r index* README.md LICENSE js dist/
 
 if [[ $features == *"static-mlog"* ]]; then
-    MLOG_EXTENDED_LOADER="./mlog_extended-0.0.3-py3-none-any.whl"
+    MLOG_EXTENDED_LOADER="./mlog_extended-0.1.3-py3-none-any.whl"
     echo "Downloading mlog_extended..."
     wget -O $MLOG_EXTENDED_WHEEL_OUTPUT $MLOG_EXTENDED_WHEEL_URL
 fi
